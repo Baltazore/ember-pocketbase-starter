@@ -18,6 +18,10 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    api: {
+      host: 'http://localhost:8090',
+      namespace: 'api',
+    },
   };
 
   if (environment === 'development') {

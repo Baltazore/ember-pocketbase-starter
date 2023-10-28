@@ -1,0 +1,16 @@
+{{page-title "Posts"}}
+
+<div class="p-4 mx-4">
+  {{#each @model.content.data as |post|}}
+    <article>
+      <header class="text-lg font-semibold">
+        {{post.title}}
+      </header>
+
+      <section>
+        {{post.body}}
+      </section>
+    </article>
+
+  {{/each}}
+</div>
