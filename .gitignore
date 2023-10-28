@@ -23,3 +23,6 @@
 
 # broccoli-debug
 /DEBUG/
+
+# pocketbase
+/pocketbase/pb_data
