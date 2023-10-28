@@ -1,4 +1,7 @@
+
 # compiled output
+public/assets/tailwind.css
+
 /dist/
 /declarations/
 
