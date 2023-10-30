@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { query } from '@ember-data/rest/request';
+import { query } from 'ember-pocketbase-starter/utils/pocketbase';
 import { service } from '@ember/service';
 
 export default class IndexRoute extends Route {
