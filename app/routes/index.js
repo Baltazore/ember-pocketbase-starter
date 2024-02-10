@@ -5,6 +5,6 @@ export default class IndexRoute extends Route {
   @service router;
 
   redirect() {
-    this.router.transitionTo('authenticated.index');
+    this.router.transitionTo('authenticated');
   }
 }
