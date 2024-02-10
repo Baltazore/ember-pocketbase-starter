@@ -4,6 +4,8 @@ services:
   pocketbase:
     build: .
     container_name: pocketbase
+    environment:
+      - PB_VERSION="0.21.2"
     ports:
       - "8090:8080"
     volumes:
