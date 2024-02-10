@@ -23,14 +23,29 @@ export default class LoginFormComponent extends Component {
         identification,
         password,
       );
-    } catch (error) {
-      console.log(error);
-      this.errorMessage = error.error || error;
+    } catch (errorOrResponse) {
+      if (typeof errorOrResponse === 'object') {
+        const errorPayload = await errorOrResponse.json();
+        this._setErrorMessage(errorPayload);
+      } else {
+        console.error('Error authenticating:', errorOrResponse);
+        this.errorMessage = 'Unknown error';
+      }
     }
 
     if (this.session.isAuthenticated) {
       // What to do with all this success?
       this.router.transitionTo('authenticated');
     }
+  }
+
+  _setErrorMessage(errorPayload) {
+    const errorCodesMap = {
+      400: 'Invalid email or password',
+      401: 'Invalid email or password',
+      500: 'Server error',
+    };
+
+    this.errorMessage = errorCodesMap[errorPayload.code] || 'Unknown error';
   }
 }
